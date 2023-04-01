@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { registerUser } from '../firebase/services'
 import { Link, useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
-import { Input, Label } from '../styles/StyleComponents'
+import { Input, Label, SubmitBtn } from '../styles/StyleComponents'
 import { UilExclamationTriangle } from '@iconscout/react-unicons'
 
 function SignUp() {
@@ -131,18 +131,6 @@ const BoxData = styled.section`
   gap: 1rem;
   margin-bottom: 2rem;
   position: relative;
-`
-const SubmitBtn = styled.button`
-  padding: 0.75rem 1rem;
-  border-radius: 9px;
-  color: ${(props) => props.theme.text};
-  font-weight: 400;
-  background-color: ${(props) => props.theme.background};
-  font-size: ${(props) => props.theme.mFont};
-  box-shadow: ${(props) => props.theme.boxShadow};
-  &:hover {
-    box-shadow: none;
-  }
 `
 const Login = styled.p`
   display: flex;
