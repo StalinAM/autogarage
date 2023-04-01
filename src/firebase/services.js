@@ -60,32 +60,32 @@ export const logoutUser = async () => {
     console.log(error)
   }
 }
-// export const insertNewTransaction = async (transaction) => {
-//   try {
-//     const transactionsRef = collection(db, 'transactions')
-//     await addDoc(transactionsRef, transaction)
-//   } catch (e) {
-//     console.log(e)
-//   }
-// }
-// export const fetchTransactions = async (uid) => {
-//   const transactions = []
-//   const q = query(collection(db, 'transactions'), where('uid', '==', uid))
+export const insertNewCar = async (car) => {
+  try {
+    const carsRef = collection(db, 'cars')
+    await addDoc(carsRef, car)
+  } catch (e) {
+    console.log(e)
+  }
+}
+export const fetchCars = async (uid) => {
+  const cars = []
+  const q = query(collection(db, 'cars'), where('uid', '==', uid))
 
-//   const querySnapshot = await getDocs(q)
+  const querySnapshot = await getDocs(q)
 
-//   querySnapshot.forEach((doc) => {
-//     const transaction = { ...doc.data() }
-//     transaction.docId = doc.id
+  querySnapshot.forEach((doc) => {
+    const car = { ...doc.data() }
+    car.docId = doc.id
 
-//     transactions.push(transaction)
-//   })
-//   return transactions
-// }
+    cars.push(car)
+  })
+  return cars
+}
 
-// export const deleteTransaction = async (docId) => {
-//   await deleteDoc(doc(db, 'transactions', docId))
-// }
-// export const updateTransaction = async (docId, transaction) => {
-//   const res = await setDoc(doc(db, 'transactions', docId), transaction)
-// }
+export const deleteCar = async (docId) => {
+  await deleteDoc(doc(db, 'cars', docId))
+}
+export const updateCar = async (docId, car) => {
+  const res = await setDoc(doc(db, 'cars', docId), car)
+}
