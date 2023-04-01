@@ -15,7 +15,10 @@ function App() {
         <Routes>
           <Route path='/' element={<SignIn />} />
           <Route path='/signup' element={<SignUp />} />
-          <Route path='/dashboard' element={<Dashboard />} />
+          <Route
+            path='/dashboard'
+            element={<Dashboard theme={theme} toggleTheme={toggleTheme} />}
+          />
         </Routes>
       </ThemeProvider>
     </>
