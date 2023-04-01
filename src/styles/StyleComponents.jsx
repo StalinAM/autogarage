@@ -18,6 +18,17 @@ export const Label = styled.label`
   color: ${(props) => props.theme.text};
   font-weight: 400;
 `
+export const SubmitBtn = styled.button`
+  padding: 0.75rem 1rem;
+  border-radius: 9px;
+  color: ${(props) => props.theme.text};
+  font-weight: 400;
+  background-color: ${(props) => props.theme.background};
+  box-shadow: ${(props) => props.theme.boxShadow};
+  &:hover {
+    box-shadow: none;
+  }
+`
 export const Line = styled.hr`
   border: none;
   margin: 1rem 0;
