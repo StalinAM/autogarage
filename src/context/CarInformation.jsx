@@ -1,6 +1,7 @@
 import { createContext, useEffect, useState } from 'react'
 import { AuthContext } from './Auth'
 import { fetchCars } from '../firebase/services'
+import { useContext } from 'react'
 export const CarInformationContext = createContext()
 
 function CarInformation({ children }) {
@@ -17,7 +18,6 @@ function CarInformation({ children }) {
       setCarList([...asyncCars])
     }
   }
-
   return (
     <CarInformationContext.Provider
       value={{ carList, loadCarListData: loadCarList }}
