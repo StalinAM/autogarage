@@ -48,13 +48,13 @@ export default Search
 
 const Container = styled.section`
   display: flex;
-  flex-direction: column;
-  gap: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
   width: 100%;
   padding: 1.5rem 1rem;
   @media screen and (min-width: 480px) {
-    flex-direction: row;
     justify-content: space-between;
+    align-items: center;
   }
   @media screen and (min-width: 768px) {
     padding: 1.5rem 5rem;
@@ -83,7 +83,7 @@ const InputF = styled.input`
   }
 `
 const ContainerFilter = styled.div`
-  width: 200px;
+  width: 210px;
   position: relative;
 `
 const ContentFilter = styled.div`
@@ -97,8 +97,7 @@ const ContentFilter = styled.div`
   color: ${(props) => props.theme.text};
   span {
     text-transform: capitalize;
-    font-size: 0.875rem;
-    font-weight: 600;
+    font-weight: 400;
   }
   svg {
     cursor: pointer;
@@ -109,17 +108,17 @@ const Menu = styled.ul`
   flex-direction: column;
   position: absolute;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-  padding: 10px 10px;
+  padding: 10px;
   border-radius: 8px;
-  width: 200px;
+  width: 210px;
   top: 55px;
   background-color: ${(props) => props.theme.elements};
   li {
     cursor: pointer;
     padding: 5px 10px;
-    font-size: 0.875rem;
+    font-size: 1rem;
     border-radius: 8px;
-    font-weight: 600;
+    font-weight: 200;
     color: ${(props) => props.theme.text};
     &:hover {
       background-color: ${(props) => props.theme.background};
