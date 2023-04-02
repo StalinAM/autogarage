@@ -1,7 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
+import { UilEdit } from '@iconscout/react-unicons'
 
-function Card({ name, licensePlate, idPerson, id }) {
+function Card({ name, licensePlate, idPerson, contract, id }) {
   return (
     <Container>
       <h2>{licensePlate}</h2>
@@ -14,6 +15,13 @@ function Card({ name, licensePlate, idPerson, id }) {
           Cédula:
           <span>{idPerson}</span>
         </Description>
+        <Description>
+          Tipo de Contrato:
+          <span>{contract}</span>
+        </Description>
+        <UpdateBtn>
+          <UilEdit />
+        </UpdateBtn>
       </Content>
     </Container>
   )
@@ -33,11 +41,13 @@ const Container = styled.div`
     text-align: center;
     color: ${(props) => props.theme.text};
     margin-bottom: 10px;
+    text-transform: uppercase;
   }
 `
 const Content = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: baseline;
 `
 const Description = styled.p`
   font-size: 0.875rem;
@@ -48,5 +58,19 @@ const Description = styled.p`
     font-size: 1rem;
     margin-left: 8px;
     font-weight: 400;
+  }
+`
+const UpdateBtn = styled.button`
+  display: flex;
+  align-items: center;
+  margin: 10px auto 0px;
+  padding: 5px;
+  border-radius: 9px;
+  color: ${(props) => props.theme.text};
+  font-weight: 400;
+  background-color: ${(props) => props.theme.background};
+  box-shadow: ${(props) => props.theme.boxShadow};
+  &:hover {
+    box-shadow: none;
   }
 `
