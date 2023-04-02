@@ -2,16 +2,10 @@ import styled from 'styled-components'
 import { Input, Label, SubmitBtn } from '../styles/StyleComponents'
 import { UilTimes } from '@iconscout/react-unicons'
 
-function FormCar({
-  handleSubmit,
-  active,
-  setActive,
-  transaction,
-  setTransaction
-}) {
+function FormCar({ handleSubmit, active, setActive, infoCar, setInfoCar }) {
   const handleInputChange = (e) => {
     const { name, value } = e.target
-    setTransaction((prevState) => ({
+    setInfoCar((prevState) => ({
       ...prevState,
       [name]: value
     }))
@@ -29,7 +23,7 @@ function FormCar({
                   name='licensePlate'
                   type='text'
                   placeholder='ABC-1234'
-                  //   value={transaction.description}
+                  value={infoCar.licensePlate}
                   onChange={handleInputChange}
                 />
               </div>
@@ -39,7 +33,7 @@ function FormCar({
                   name='name'
                   type='text'
                   placeholder='Nombre'
-                  //   value={transaction.income}
+                  value={infoCar.name}
                   onChange={handleInputChange}
                 />
               </div>
@@ -49,7 +43,7 @@ function FormCar({
                   name='idPerson'
                   type='text'
                   placeholder='123456789-0'
-                  //   value={transaction.expense}
+                  value={infoCar.idPerson}
                   onChange={handleInputChange}
                 />
               </div>
@@ -57,11 +51,21 @@ function FormCar({
                 <h3>Tipo de contrato</h3>
                 <ContainerRadioBtn>
                   <RadioBtn>
-                    <input type='radio' name='radio' />
+                    <input
+                      type='radio'
+                      name='contract'
+                      value={'horas'}
+                      onChange={handleInputChange}
+                    />
                     <span>Horas</span>
                   </RadioBtn>
                   <RadioBtn>
-                    <input type='radio' name='radio' />
+                    <input
+                      type='radio'
+                      name='contract'
+                      value={'mensual'}
+                      onChange={handleInputChange}
+                    />
                     <span>Mensual</span>
                   </RadioBtn>
                 </ContainerRadioBtn>
