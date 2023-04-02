@@ -1,6 +1,7 @@
 import { createContext, useRef, useEffect, useState } from 'react'
 import { auth } from '../firebase/firebase'
 import { onAuthStateChanged } from 'firebase/auth'
+import Loader from '../components/Loader'
 
 export const AuthContext = createContext()
 
@@ -14,11 +15,12 @@ function Auth({ children }) {
       setLoading(false)
     })
 
-    return () => unsubscribe()
+    return () => {
+      unsubscribe()
+    }
   }, [auth])
-
   if (loading) {
-    return <div>Loading...</div>
+    return <Loader />
   }
 
   return (
