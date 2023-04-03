@@ -14,7 +14,6 @@ function MultipleCarInfoCards({ theme }) {
       setLoading(false)
     }
   }, [carList])
-
   return (
     <Container>
       <Content>
@@ -33,6 +32,7 @@ function MultipleCarInfoCards({ theme }) {
                 licensePlate={item.licensePlate}
                 idPerson={item.idPerson}
                 contract={item.contract}
+                docId={item.docId}
               />
             </li>
           ))

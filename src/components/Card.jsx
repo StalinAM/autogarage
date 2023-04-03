@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
-import { UilEdit } from '@iconscout/react-unicons'
+import UpdateCar from './UpdateCar'
 
-function Card({ name, licensePlate, idPerson, contract, id }) {
+function Card({ name, licensePlate, idPerson, contract, docId }) {
   return (
     <Container>
       <h2>{licensePlate}</h2>
@@ -19,9 +19,13 @@ function Card({ name, licensePlate, idPerson, contract, id }) {
           Tipo de Contrato:
           <span>{contract}</span>
         </Description>
-        <UpdateBtn>
-          <UilEdit />
-        </UpdateBtn>
+        <UpdateCar
+          licensePlate={licensePlate}
+          name={name}
+          idPerson={idPerson}
+          contract={contract}
+          docId={docId}
+        />
       </Content>
     </Container>
   )
@@ -58,19 +62,5 @@ const Description = styled.p`
     font-size: 1rem;
     margin-left: 8px;
     font-weight: 400;
-  }
-`
-const UpdateBtn = styled.button`
-  display: flex;
-  align-items: center;
-  margin: 10px auto 0px;
-  padding: 5px;
-  border-radius: 9px;
-  color: ${(props) => props.theme.text};
-  font-weight: 400;
-  background-color: ${(props) => props.theme.background};
-  box-shadow: ${(props) => props.theme.boxShadow};
-  &:hover {
-    box-shadow: none;
   }
 `
