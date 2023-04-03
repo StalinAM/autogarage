@@ -1,4 +1,4 @@
-import { createContext, useRef, useEffect, useState } from 'react'
+import { createContext, useEffect, useState } from 'react'
 import { auth } from '../firebase/firebase'
 import { onAuthStateChanged } from 'firebase/auth'
 import Loader from '../components/Loader'
