@@ -3,14 +3,16 @@ import styled from 'styled-components'
 // import { ApiContext } from '../context/CarInformation'
 import { UilSearch, UilAngleDown } from '@iconscout/react-unicons'
 import AddNewCar from './AddNewCar'
+import { CarInformationContext } from '../context/CarInformation'
 
 function Search() {
-  // const { setContract, contract, setLicensePlate } = useContext(ApiContext)
-  const [contract, setContract] = useState(null)
+  const { setContract, setLicensePlate, contract, loadCarListData } =
+    useContext(CarInformationContext)
   const [active, setActive] = useState(false)
   const contracts = ['Todos', 'Horas', 'Mensual']
   const handleContract = (contract) => {
     setContract(contract)
+    loadCarListData()
     setActive(false)
   }
   const handleChange = (event) => {
