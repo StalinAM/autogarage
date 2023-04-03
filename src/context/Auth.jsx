@@ -6,12 +6,11 @@ import Loader from '../components/Loader'
 export const AuthContext = createContext()
 
 function Auth({ children }) {
-  const currentUserRef = useRef(null)
   const [loading, setLoading] = useState(true)
-
+  const [currentUser, setCurrentUser] = useState(null)
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
-      currentUserRef.current = user
+      setCurrentUser(user)
       setLoading(false)
     })
 
@@ -24,7 +23,7 @@ function Auth({ children }) {
   }
 
   return (
-    <AuthContext.Provider value={{ currentUser: currentUserRef.current }}>
+    <AuthContext.Provider value={{ currentUser }}>
       {children}
     </AuthContext.Provider>
   )
