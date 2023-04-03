@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { UilBrightness, UilMoon } from '@iconscout/react-unicons'
+import LogOut from './LogOut'
 
 function Header({ theme, toggleTheme }) {
   return (
@@ -9,16 +10,15 @@ function Header({ theme, toggleTheme }) {
       <Theme onClick={toggleTheme}>
         {theme === 'dark' ? (
           <>
-            <UilBrightness size={20} />
-            <span>Ligh Mode</span>
+            <UilBrightness size={26} />
           </>
         ) : (
           <>
-            <UilMoon size={18} />
-            <span>Dark Mode</span>
+            <UilMoon size={24} />
           </>
         )}
       </Theme>
+      <LogOut />
     </Container>
   )
 }
