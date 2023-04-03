@@ -6,7 +6,6 @@ import {
 import {
   addDoc,
   collection,
-  deleteDoc,
   doc,
   getDocs,
   query,
@@ -83,9 +82,6 @@ export const fetchCars = async (uid) => {
   return cars
 }
 
-export const deleteCar = async (docId) => {
-  await deleteDoc(doc(db, 'cars', docId))
-}
 export const updateCar = async (docId, car) => {
   const res = await setDoc(doc(db, 'cars', docId), car)
 }
