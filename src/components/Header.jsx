@@ -7,18 +7,20 @@ function Header({ theme, toggleTheme }) {
   return (
     <Container>
       <h1>AutoGarage</h1>
-      <Theme onClick={toggleTheme}>
-        {theme === 'dark' ? (
-          <>
-            <UilBrightness size={26} />
-          </>
-        ) : (
-          <>
-            <UilMoon size={24} />
-          </>
-        )}
-      </Theme>
-      <LogOut />
+      <Right>
+        <Theme onClick={toggleTheme}>
+          {theme === 'dark' ? (
+            <>
+              <UilBrightness size={26} />
+            </>
+          ) : (
+            <>
+              <UilMoon size={24} />
+            </>
+          )}
+        </Theme>
+        <LogOut />
+      </Right>
     </Container>
   )
 }
@@ -51,4 +53,9 @@ const Theme = styled.button`
     font-weight: 600;
     font-size: 0.875rem;
   }
+`
+const Right = styled.div`
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
 `
