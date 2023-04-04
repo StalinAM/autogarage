@@ -9,7 +9,7 @@ function LogOut() {
   }
   return (
     <Btn onClick={handleClick} to='/'>
-      LogOut
+      Salir
     </Btn>
   )
 }
