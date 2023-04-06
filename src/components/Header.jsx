@@ -36,7 +36,7 @@ const Container = styled.header`
   color: ${(props) => props.theme.text};
   box-shadow: ${(props) => props.theme.boxShadow};
   h1 {
-    font-size: 1rem;
+    font-size: 1.5rem;
     font-weight: 800;
   }
   @media screen and (min-width: 768px) {
