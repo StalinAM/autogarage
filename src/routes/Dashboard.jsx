@@ -5,6 +5,7 @@ import AddCar from '../components/FormCar'
 import Search from '../components/Search'
 import Card from '../components/Card'
 import MultipleCarInfoCards from '../components/MultipleCarInfoCards'
+import Footer from '../components/Footer'
 
 function Dashboard({ theme, toggleTheme }) {
   return (
@@ -14,6 +15,7 @@ function Dashboard({ theme, toggleTheme }) {
         <Search />
         <MultipleCarInfoCards theme={theme} />
       </Contaier>
+      <Footer />
     </>
   )
 }
