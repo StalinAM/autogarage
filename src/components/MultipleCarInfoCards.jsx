@@ -26,7 +26,7 @@ function MultipleCarInfoCards({ theme }) {
           />
         ) : (
           carList.map((item) => (
-            <li key={item.idPerson}>
+            <li key={item.licensePlate}>
               <Card
                 name={item.name}
                 licensePlate={item.licensePlate}
