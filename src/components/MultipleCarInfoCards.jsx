@@ -33,6 +33,7 @@ function MultipleCarInfoCards({ theme }) {
                 idPerson={item.idPerson}
                 contract={item.contract}
                 docId={item.docId}
+                nick={item.nick}
               />
             </li>
           ))

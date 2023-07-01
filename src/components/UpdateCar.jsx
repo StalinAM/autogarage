@@ -6,7 +6,7 @@ import { AuthContext } from '../context/Auth'
 import { CarInformationContext } from '../context/CarInformation'
 import { updateCar } from '../firebase/services'
 
-function UpdateCar({ licensePlate, name, idPerson, contract, docId }) {
+function UpdateCar({ licensePlate, name, idPerson, contract, nick, docId }) {
   const { currentUser } = useContext(AuthContext)
   const { loadCarListData } = useContext(CarInformationContext)
   const [active, setActive] = useState(false)
@@ -14,7 +14,8 @@ function UpdateCar({ licensePlate, name, idPerson, contract, docId }) {
     licensePlate,
     name,
     idPerson,
-    contract
+    contract,
+    nick,
   })
   const editCar = async () => {
     if (

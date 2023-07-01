@@ -13,7 +13,8 @@ function AddNewCar() {
     licensePlate: '',
     name: '',
     idPerson: '',
-    contract: ''
+    contract: '',
+    nick: ''
   })
   const addCar = async () => {
     if (
@@ -34,7 +35,13 @@ function AddNewCar() {
     e.preventDefault()
     addCar()
     setActive(false)
-    setInfoCar({ licensePlate: '', name: '', idPerson: '', contract: '' })
+    setInfoCar({
+      licensePlate: '',
+      name: '',
+      idPerson: '',
+      contract: '',
+      nick: ''
+    })
   }
 
   return (

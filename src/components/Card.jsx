@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import UpdateCar from './UpdateCar'
 
-function Card({ name, licensePlate, idPerson, contract, docId }) {
+function Card({ name, licensePlate, idPerson, contract, nick = '', docId }) {
   return (
     <Container>
       <h2>{licensePlate}</h2>
@@ -19,12 +19,17 @@ function Card({ name, licensePlate, idPerson, contract, docId }) {
           Tipo de Contrato:
           <span>{contract}</span>
         </Description>
+        <Description>
+          Apodo:
+          <span>{nick}</span>
+        </Description>
         <UpdateCar
           licensePlate={licensePlate}
           name={name}
           idPerson={idPerson}
           contract={contract}
           docId={docId}
+          nick={nick}
         />
       </Content>
     </Container>

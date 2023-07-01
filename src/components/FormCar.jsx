@@ -70,6 +70,16 @@ function FormCar({ handleSubmit, active, setActive, infoCar, setInfoCar }) {
                   </RadioBtn>
                 </ContainerRadioBtn>
               </div>
+              <div>
+                <Label htmlFor='nick'>Apodo</Label>
+                <Input
+                  name='nick'
+                  type='text'
+                  placeholder='veci comidas'
+                  value={infoCar.nick}
+                  onChange={handleInputChange}
+                />
+              </div>
               <SubmitBtn type='submit'>Añadir</SubmitBtn>
             </FormC>
           </ModalC>
